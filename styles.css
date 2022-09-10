@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
+
+:root {
+  --black-dark: #111111;
+  --black-light: #1a1919;
+  --text-white: #fdfdfd;
+  --accent: #3e54e5;
+  --width: 50%;
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--text-white);
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--black-light);
+  min-width: 900px;
+}
+
+/* NAVIGATION BAR =================================================================== */
+
+/* Note the following construction:
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+It is monstrous, but hear me out. It allows me to create a 100% height hover effect for links regardless of the ".navbar" height and without setting padding for the links. The <a> elements take 100% of their parent elements' height: <li>, <ul>, and ".navbar". 
+
+Also if you change the scale of the page, the links always have the 100% height hover effect. Perhaps that's too much fuzz about the navbar, but I wanted it to behave this way and explore possible options. 
+
+To see it in action: 
+
+- Try to change the "height" in ".navbar" 
+- Change the scale of the page in the browser.
+
+*/
+
+.navbar,
+.navbar ul,
+.navbar li,
+.navbar a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 1;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 32px;
+  background-color: var(--black-dark);
+  color: var(--text-white);
+  min-width: 900px;
+  width: 100%;
+  /* border-bottom: 1px solid var(--accent); */
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  list-style-type: none;
+}
+
+.navbar a {
+  padding: 0 16px;
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 0.889rem;
+}
+
+.navbar a:hover {
+  color: var(--text-white);
+  background-color: var(--accent);
+}
+
+.navbar p:hover {
+  cursor: default;
+}
+
+/* SECTIONS  =================================================== */
+
+.section-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7rem 0;
+}
+
+/* The width of the sections with the default HTML background color */
+.width {
+  width: var(--width);
+  margin: 0 auto;
+}
+
+/* HEADINGS =================================================== */
+
+.heading {
+  color: var(--accent);
+  font-family: "Roboto Mono", monospace;
+  line-height: normal;
+  font-size: 2.611rem;
+}
+
+.heading-main {
+  margin: 16px auto 24px 0;
+  width: 60%;
+}
+
+.heading-section {
+  width: 100%;
+  margin: 16px 0 24px;
+}
+
+.subheading {
+  font-size: 1.611rem;
+  color: var(--text-white);
+  font-weight: 500;
+  margin: 0px 0 8px;
+}
+
+/* PARAGRAPHS =================================================== */
+
+.paragraph-intro {
+  margin: 0;
+  width: 70%;
+}
+
+.paragraph-general {
+  margin: 16px 0 32px;
+}
+
+.time-period {
+  margin: 0px 0 24px;
+  font-weight: 500;
+}
+
+/* LISTS ======================================================= */
+
+ul {
+  color: var(--text-white);
+  margin: 0;
+  padding: 0;
+  margin-bottom: 48px;
+  margin-left: 24px;
+}
+
+/* LINKS ======================================================= */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  /* text-decoration: underline; */
+  /* background-color: var(--accent); */
+}
+
+/* INTRO =================================================================== */
+
+.intro {
+  height: 100vh;
+}
+
+/* ABOUT ME =================================================================== */
+
+.about-me {
+  background-color: var(--black-dark);
+}
+
+/* EXPERIENCE =============================================================== */
+
+/* .experience {
+  height: 90vh; 
+  padding: 10rem 0; 
+} */
+
+/* SKILLS =============================================================== */
+
+.skills {
+  background-color: var(--black-dark);
+}
+
+.skills-item h3 {
+  margin: 0;
+}
+
+.skills-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.skills-item i {
+  color: gray;
+}
+
+.icon-size {
+  font-size: 24px;
+}
+/* WORK =============================================================== */
+
+.work p {
+  margin-top: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(188px, auto);
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--black-dark);
+  min-width: 280px;
+  min-height: 280px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.grid-item-heading {
+  font-size: 1.3rem;
+  color: var(--text-white);
+  font-weight: 500;
+  margin: 0px 0 8px;
+}
+
+.grid-item-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item p {
+  font-size: 0.889rem;
+  color: var(--text-white);
+  opacity: 0.8;
+}
+
+.design {
+  margin: 24px 0;
+}
+
+.ri-external-link-line {
+  color: var(--accent);
+}
+
+/* CERTIFICATES ====================================================== */
+
+.certificates {
+  background-color: var(--black-dark);
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 24px;
+}
+
+.certificate-pane {
+  background-color: var(--black-light);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.certificate-pane ul {
+  margin-bottom: 24px;
+}
+
+.certificate-pane li {
+  margin-bottom: 8px;
+}
+
+.company {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.company h3 {
+  margin: 0;
+}
+
+.logo-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--text-white);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* CONTACTS ====================================================== */
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+
+.contacts-additional p {
+  margin: 0;
+}
+
+.contacts-details ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.contacts-details li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contacts-details i {
+  color: gray;
+}
+
+/* FOOTER ========================================================= */
+footer {
+  background-color: var(--black-dark);
+  padding: 2rem 0;
+}
+
+footer p {
+  text-align: center;
+}
+
+/* MEDIA============================================================ */
+
+@media screen and (max-width: 1224px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .certificates-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
